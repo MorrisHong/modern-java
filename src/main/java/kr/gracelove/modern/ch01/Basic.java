@@ -1,12 +1,21 @@
-package kr.gracelove.modern;
+package kr.gracelove.modern.ch01;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Basic2 {
+public class Basic {
 
+    private static String GREEN = "green";
+
+    public static boolean isGreenApple(Apple apple) {
+        return GREEN.equals(apple.getColor());
+    }
+
+    public static boolean isHeavyApple(Apple apple) {
+        return apple.getWeight() > 150;
+    }
 
     static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p) {
         List<Apple> result = new ArrayList<>();
@@ -25,11 +34,8 @@ public class Basic2 {
                 new Apple(120, "red")
         );
 
-        List<Apple> heavyApples = filterApples(inventory, (apple -> apple.getWeight()>150));
-        List<Apple> greenApples = filterApples(inventory, (apple -> "green".equals(apple.getColor())));
-        heavyApples.forEach(System.out::println);
-        System.out.println("------------------");
-        greenApples.forEach(System.out::println);
+        List<Apple> apples = filterApples(inventory, Basic::isGreenApple);
+        apples.forEach(System.out::println);
     }
 
 

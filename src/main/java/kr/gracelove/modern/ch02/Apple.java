@@ -1,10 +1,10 @@
-package kr.gracelove.modern;
+package kr.gracelove.modern.ch02;
 
 public class Apple {
     private Integer weight;
-    private String color;
+    private Color color;
 
-    public Apple(int weight, String color) {
+    public Apple(Integer weight, Color color) {
         this.weight = weight;
         this.color = color;
     }
@@ -13,7 +13,7 @@ public class Apple {
         return weight;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
